@@ -3,216 +3,231 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reza Faraji — Systems & Security</title>
-<meta name="description" content="Reza Faraji: senior systems administrator for a university computer science department, M.S. Cybersecurity candidate, detection engineering and research infrastructure.">
-<meta property="og:title" content="Reza Faraji — Systems & Security">
-<meta property="og:description" content="Senior systems administrator · M.S. Cybersecurity · detection engineering, research infrastructure, CTFs.">
+<title>Reza Faraji</title>
+<meta name="description" content="Reza Faraji — senior systems administrator, M.S. Cybersecurity candidate. Detection engineering and research infrastructure.">
+<meta property="og:title" content="Reza Faraji">
+<meta property="og:description" content="Senior systems administrator · M.S. Cybersecurity · detection engineering and research infrastructure.">
 <meta property="og:image" content="https://farajisec.github.io/me.jpg">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230f766e'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='white' font-family='system-ui' font-weight='700'>RF</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23111'/><text x='32' y='42' font-size='30' text-anchor='middle' fill='white' font-family='Inter,system-ui' font-weight='600'>R</text></svg>">
 <style>
   :root {
-    --bg: #fbfbfa; --fg: #1a1a1a; --muted: #5c6370; --line: #e4e4e0; --card: #ffffff;
-    --accent: #0f766e; --accent-soft: #e6f4f2; --chip: #f1f1ee;
+    --bg: #ffffff; --fg: #171717; --muted: #6b7280; --faint: #9ca3af; --line: #e5e7eb; --card: #ffffff;
+    --hover: #f9fafb; --link: #171717; --accent: #2563eb;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #0f1115; --fg: #e8e8e6; --muted: #9aa3b2; --line: #272b33; --card: #161a21;
-      --accent: #2dd4bf; --accent-soft: #11302c; --chip: #1e232b;
+      --bg: #0a0a0a; --fg: #ededed; --muted: #a1a1aa; --faint: #71717a; --line: #262626; --card: #0a0a0a;
+      --hover: #141414; --link: #ededed; --accent: #60a5fa;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #0f1115; --fg: #e8e8e6; --muted: #9aa3b2; --line: #272b33; --card: #161a21;
-    --accent: #2dd4bf; --accent-soft: #11302c; --chip: #1e232b;
+    --bg: #0a0a0a; --fg: #ededed; --muted: #a1a1aa; --faint: #71717a; --line: #262626; --card: #0a0a0a;
+    --hover: #141414; --link: #ededed; --accent: #60a5fa;
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   body { margin: 0; background: var(--bg); color: var(--fg);
-         font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .wrap { max-width: 780px; margin: 0 auto; padding: 0 16px 64px; }
-  header.hero { display: grid; grid-template-columns: 112px 1fr; gap: 24px; align-items: center; padding: 48px 0 24px; }
-  header.hero img { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 3px solid var(--line); }
-  h1 { font-size: 2rem; line-height: 1.15; margin: 0 0 4px; letter-spacing: -0.01em; }
-  .tagline { color: var(--muted); margin: 0 0 12px; font-size: 1.05rem; }
-  .links { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: .95rem; align-items: center; }
-  .links a { display: inline-flex; align-items: center; gap: 6px; }
-  .links svg { width: 16px; height: 16px; fill: currentColor; }
-  nav.toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 28px; }
-  nav.toc a { font-size: .85rem; padding: 4px 10px; border-radius: 999px; background: var(--chip); color: var(--fg); }
-  nav.toc a:hover { background: var(--accent-soft); text-decoration: none; }
-  section { padding: 28px 0; border-top: 1px solid var(--line); }
-  h2 { font-size: 1.15rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 16px; }
-  p { margin: 0 0 12px; }
-  .lead { font-size: 1.08rem; }
-  .job { margin-bottom: 20px; }
-  .job h3 { margin: 0; font-size: 1.05rem; }
-  .job .meta { color: var(--muted); font-size: .92rem; margin: 2px 0 8px; }
-  ul.tight { margin: 0; padding-left: 20px; }
-  ul.tight li { margin: 4px 0; }
-  .cards { display: grid; gap: 14px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
-  .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
-  .card p { margin: 0 0 8px; }
-  .card .stat { font-size: .88rem; color: var(--muted); }
-  .card .stat b { color: var(--fg); font-weight: 600; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .chips span { background: var(--chip); border-radius: 8px; padding: 4px 10px; font-size: .9rem; }
-  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  footer { color: var(--muted); font-size: .85rem; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  .print-btn { background: none; border: 1px solid var(--line); color: var(--fg); border-radius: 8px; padding: 6px 12px; cursor: pointer; font: inherit; font-size: .9rem; }
-  .print-btn:hover { background: var(--accent-soft); }
-  @media (max-width: 560px) {
-    header.hero { grid-template-columns: 1fr; }
-    header.hero img { width: 88px; height: 88px; }
-    .cols { grid-template-columns: 1fr; }
+         font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 15.5px; line-height: 1.65;
+         -webkit-font-smoothing: antialiased; }
+  a { color: var(--link); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--fg); }
+  .container { max-width: 672px; margin: 0 auto; padding: 0 20px; }
+
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 28px 0 12px; }
+  nav .brand { font-weight: 600; text-decoration: none; font-size: 15px; }
+  nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+  nav li a { text-decoration: none; color: var(--muted); font-size: 14px; }
+  nav li a:hover { color: var(--fg); }
+
+  .intro { display: flex; align-items: center; gap: 18px; margin: 40px 0 8px; }
+  .intro img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: none; }
+  h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; margin: 0; line-height: 1.3; }
+  .role { color: var(--muted); margin: 2px 0 0; font-size: 15px; }
+  .bio { margin: 20px 0 0; }
+  .bio p { margin: 0 0 14px; }
+  .where { color: var(--muted); font-size: 14px; margin-top: 4px; }
+  .where a { color: var(--muted); }
+
+  section { margin-top: 48px; }
+  h2 { font-size: 18px; font-weight: 600; letter-spacing: -0.005em; margin: 0 0 18px; }
+
+  .entry { display: grid; grid-template-columns: 112px 1fr; gap: 16px; margin-bottom: 22px; }
+  .entry .when { color: var(--faint); font-size: 14px; padding-top: 2px; font-variant-numeric: tabular-nums; }
+  .entry h3 { margin: 0; font-size: 15.5px; font-weight: 600; }
+  .entry .org { color: var(--muted); margin: 0 0 8px; font-size: 14.5px; }
+  .entry ul { margin: 0; padding-left: 18px; color: var(--fg); }
+  .entry li { margin: 5px 0; }
+
+  .projects { display: grid; gap: 12px; }
+  .project { display: block; border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; text-decoration: none;
+             background: var(--card); transition: background .15s, border-color .15s; }
+  .project:hover { background: var(--hover); border-color: var(--faint); }
+  .project .title { font-weight: 600; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .project .title svg { width: 14px; height: 14px; color: var(--faint); flex: none; }
+  .project p { margin: 6px 0 10px; color: var(--muted); font-size: 14.5px; }
+  .project .tags { display: flex; flex-wrap: wrap; gap: 6px 10px; font-size: 12.5px; color: var(--faint); }
+  .project .tags span::before { content: "#"; opacity: .6; }
+
+  .skills { display: grid; grid-template-columns: 140px 1fr; gap: 8px 16px; font-size: 14.5px; }
+  .skills dt { color: var(--muted); }
+  .skills dd { margin: 0; }
+
+  .research li { margin: 8px 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; background: var(--hover);
+         border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; }
+
+  footer { margin: 64px 0 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--faint); font-size: 13.5px;
+           display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  footer a { color: var(--faint); }
+  .linkbtn { background: none; border: 0; padding: 0; font: inherit; color: var(--faint); cursor: pointer;
+             text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+  .linkbtn:hover { color: var(--fg); }
+
+  @media (max-width: 520px) {
+    .entry { grid-template-columns: 1fr; gap: 2px; }
+    .skills { grid-template-columns: 1fr; gap: 2px 0; }
+    .skills dt { margin-top: 8px; }
+    nav ul { gap: 14px; }
   }
   @media print {
-    :root { --bg: #fff; --fg: #000; --muted: #444; --line: #bbb; --card: #fff; --accent: #0b5f58; --chip: #eee; }
+    :root { --bg: #fff; --fg: #000; --muted: #333; --faint: #555; --line: #ccc; --card: #fff; --hover: #fff; }
     body { font-size: 11pt; }
-    .wrap { max-width: none; padding: 0; }
-    nav.toc, .print-btn, .no-print { display: none !important; }
-    header.hero { padding: 0 0 12px; }
-    section { padding: 12px 0; break-inside: avoid; }
-    .card { break-inside: avoid; }
+    nav, .no-print { display: none !important; }
+    .container { max-width: none; padding: 0; }
+    section { margin-top: 20px; break-inside: avoid; }
+    .project { break-inside: avoid; }
+    a { text-decoration: none; }
   }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="container">
 
-<header class="hero">
-  <img src="me.jpg" alt="Portrait of Reza Faraji" width="112" height="112">
+<nav aria-label="Primary">
+  <a class="brand" href="/">Reza Faraji</a>
+  <ul>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="https://github.com/farajisec">GitHub</a></li>
+  </ul>
+</nav>
+
+<header class="intro">
+  <img src="me.jpg" alt="" width="64" height="64">
   <div>
     <h1>Reza Faraji</h1>
-    <p class="tagline">Senior Systems Administrator · M.S. Cybersecurity candidate · Las Vegas, NV</p>
-    <div class="links">
-      <a href="https://github.com/farajisec" rel="me">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        github.com/farajisec
-      </a>
-      <button class="print-btn no-print" onclick="window.print()">Save as PDF</button>
-    </div>
+    <p class="role">Senior Systems Administrator · M.S. Cybersecurity candidate</p>
+    <p class="where">Las Vegas, NV · <a href="https://github.com/farajisec">github.com/farajisec</a></p>
   </div>
 </header>
 
-<nav class="toc" aria-label="Sections">
-  <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a>
-  <a href="#research">Security research</a><a href="#education">Education</a><a href="#skills">Skills</a>
-</nav>
-
-<section id="about">
-  <h2>About</h2>
-  <p class="lead">I run the infrastructure of a university computer science department — the GPU clusters, research
-  servers, storage, identity and monitoring that faculty and students depend on — and I spend the rest of my time on
-  the detection side of the same problem: how an attacker would move through an environment like mine, and how to
-  see it.</p>
-  <p>Three years as the department's senior systems administrator, finishing an M.S. in Cybersecurity, and
-  building a portfolio of detection-engineering work that is measured rather than claimed: every project below
-  ships with labeled data, an evaluation harness and a CI run that fails if the numbers regress.</p>
-</section>
+<div class="bio">
+  <p>I run the infrastructure of a university computer science department — GPU clusters, research servers,
+  storage, identity and monitoring — and spend the rest of my time on the detection side of the same problem: how an
+  attacker would move through an environment like mine, and how to see it.</p>
+  <p>Three years in the role, finishing a master's in cybersecurity, and building detection-engineering work that is
+  measured rather than claimed: each project below ships with labeled data, an evaluation harness and a CI run that
+  fails if the numbers regress.</p>
+</div>
 
 <section id="experience">
   <h2>Experience</h2>
-  <div class="job">
-    <h3>Senior Systems Administrator — Department of Computer Science, University of Nevada, Las Vegas</h3>
-    <p class="meta">2022 – present · Administrative Faculty · Howard R. Hughes College of Engineering</p>
-    <ul class="tight">
-      <li>Own the department's self-managed fleet: Proxmox virtualization hosts, file and application servers,
-          research machines and a growing multi-node GPU cluster for faculty labs.</li>
-      <li>Lead the migration from a legacy Windows Active Directory to FreeIPA for Linux identity and access.</li>
-      <li>Stood up fleet monitoring and alerting (Beszel, Uptime Kuma) and rolled Splunk log forwarding across
-          research and infrastructure hosts in coordination with the central IT security team.</li>
-      <li>Moved the department's certificates onto automated ACME issuance, replacing manual renewals.</li>
-      <li>Specified and procured GPU compute for research groups, from vendor quotes through Slurm scheduling.</li>
-      <li>Supervise two undergraduate student assistants; design their work so it is safe to delegate — read-only
-          audits, inventory, documentation — and keep privileged change in administrator hands.</li>
-      <li>Represent the College of Engineering on the Administrative Faculty Committee.</li>
-    </ul>
+  <div class="entry">
+    <div class="when">2022 — now</div>
+    <div>
+      <h3>Senior Systems Administrator</h3>
+      <p class="org">Department of Computer Science, University of Nevada, Las Vegas · Administrative Faculty</p>
+      <ul>
+        <li>Own the department's self-managed fleet: Proxmox virtualization, file and application servers, research
+            machines and a multi-node GPU cluster for faculty labs.</li>
+        <li>Leading the migration from a legacy Windows Active Directory to FreeIPA for Linux identity and access.</li>
+        <li>Built fleet monitoring and alerting (Beszel, Uptime Kuma) and rolled Splunk log forwarding across research
+            and infrastructure hosts with the central security team.</li>
+        <li>Moved certificate issuance to automated ACME; specified and procured GPU compute from vendor quotes
+            through Slurm scheduling.</li>
+        <li>Supervise two undergraduate assistants, with work designed to be safe to delegate: read-only audits,
+            inventory and documentation, while privileged change stays with administrators.</li>
+        <li>College of Engineering representative on the Administrative Faculty Committee.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
-  <div class="cards">
-    <div class="card">
-      <h3><a href="https://github.com/farajisec/siem-detection-lab">siem-detection-lab</a></h3>
-      <p>A from-scratch Sigma rule engine with correlation rules, behavioural analytics (beaconing, impossible
-         travel, DGA, exfiltration volume), risk-based incident grouping and an evaluation harness, run against a
-         synthetic week of identity and network telemetry with 22 labeled attacks, 9 benign look-alikes and a
-         six-stage account-takeover campaign.</p>
-      <p class="stat"><b>15 detections</b> · recall <b>1.0</b> on the scenario set · <b>0</b> alerts on plain baseline ·
-         campaign rebuilt into one incident · exports to Sentinel KQL and Splunk SPL</p>
-    </div>
-    <div class="card">
-      <h3><a href="https://github.com/farajisec/log-anomaly-triage">log-anomaly-triage</a></h3>
-      <p>Unsupervised, multi-signal anomaly detection for service metrics — minute-level seasonal profiles,
-         EWMA, bias-corrected CUSUM and a load-decoupling model fused into an advisory, explained triage queue with
-         change-aware hold-outs and an analyst feedback loop that recalibrates detectors within bounds.</p>
-      <p class="stat"><b>10 / 10</b> incidents detected · precision <b>0.55</b> vs <b>0.06</b> for a naive z-score ·
-         ~1 candidate per day across six services · the package cannot act, and a test proves it</p>
-    </div>
-    <div class="card">
-      <h3><a href="https://github.com/farajisec/csflow">csflow</a></h3>
-      <p>A privacy-first fleet status pipeline: counts-only aggregation, a publish delay, and a fail-closed
-         privacy gate that scans every published artifact so a public status page cannot leak a single hostname.</p>
-      <p class="stat">Built for the problem of showing a department its fleet is healthy without handing an
-         outsider a map of it</p>
-    </div>
+  <div class="projects">
+    <a class="project" href="https://github.com/farajisec/siem-detection-lab">
+      <div class="title">siem-detection-lab
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M6 4h6v6"/></svg></div>
+      <p>A from-scratch Sigma rule engine with correlation rules, behavioural analytics and risk-based incident
+         grouping, evaluated against a synthetic week of identity and network telemetry with 22 labeled attacks,
+         9 benign look-alikes and a six-stage account-takeover campaign. Recall 1.0 on the scenario set, zero alerts on
+         plain baseline, exports to Sentinel KQL and Splunk SPL.</p>
+      <div class="tags"><span>sigma</span><span>detection-engineering</span><span>python</span><span>attack</span></div>
+    </a>
+    <a class="project" href="https://github.com/farajisec/log-anomaly-triage">
+      <div class="title">log-anomaly-triage
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M6 4h6v6"/></svg></div>
+      <p>Unsupervised, multi-signal anomaly detection for service metrics: minute-level seasonal profiles, EWMA,
+         bias-corrected CUSUM and a load-decoupling model fused into an advisory, explained triage queue with
+         change-aware hold-outs and a bounded analyst feedback loop. 10 of 10 incidents detected at precision 0.55,
+         against 0.06 for a naive z-score.</p>
+      <div class="tags"><span>anomaly-detection</span><span>sre</span><span>python</span><span>human-in-the-loop</span></div>
+    </a>
+    <a class="project" href="https://github.com/farajisec/csflow">
+      <div class="title">csflow
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M6 4h6v6"/></svg></div>
+      <p>A privacy-first fleet status pipeline: publish delay, k-anonymity, complementary suppression, an allowlisted
+         output schema and a fail-closed gate that scans for identifiers in six encodings — with an injection drill on
+         every run proving the gate catches all thirteen planted leak types.</p>
+      <div class="tags"><span>privacy</span><span>k-anonymity</span><span>python</span><span>status-page</span></div>
+    </a>
   </div>
 </section>
 
-<section id="research">
-  <h2>Security research</h2>
-  <ul class="tight">
-    <li><b>National Cyber League</b> competitor: web exploitation, wireless capture analysis, binary reverse
+<section id="research" class="research">
+  <h2>Research &amp; competitions</h2>
+  <ul>
+    <li><strong>National Cyber League</strong> — web exploitation, wireless capture analysis, binary reverse
         engineering, privilege escalation (including the <code>sudo</code> bypass, CVE-2019-14287) and cryptography.</li>
-    <li>RFID/NFC analysis of a consumer smart lock with a Flipper Zero, documenting the credential model and its
-        weak points.</li>
-    <li>Graduate independent study on the boundaries of the Computer Fraud and Abuse Act after <i>Van Buren</i> and
-        on jurisdiction in cross-border cyber-law.</li>
+    <li>RFID/NFC analysis of a consumer smart lock with a Flipper Zero, documenting the credential model and where it
+        is weak.</li>
+    <li>Graduate independent study on the limits of the Computer Fraud and Abuse Act after <em>Van Buren</em> and on
+        jurisdiction in cross-border cyber-law.</li>
   </ul>
 </section>
 
 <section id="education">
   <h2>Education</h2>
-  <div class="job">
-    <h3>M.S. Cybersecurity — University of Nevada, Las Vegas</h3>
-    <p class="meta">In progress · coursework in modern cryptography, IT forensics, cyber-physical systems security,
-    advanced network security, and cyber strategy &amp; governance</p>
+  <div class="entry">
+    <div class="when">in progress</div>
+    <div>
+      <h3>M.S. Cybersecurity</h3>
+      <p class="org">University of Nevada, Las Vegas</p>
+      <ul><li>Modern cryptography, IT forensics, cyber-physical systems security, advanced network security,
+          cyber strategy &amp; governance.</li></ul>
+    </div>
   </div>
 </section>
 
 <section id="skills">
   <h2>Skills</h2>
-  <div class="cols">
-    <div>
-      <p><b>Infrastructure</b></p>
-      <div class="chips"><span>Linux (RHEL family, Ubuntu)</span><span>Windows Server</span><span>Proxmox</span>
-        <span>FreeIPA</span><span>Active Directory</span><span>Slurm</span><span>ZFS / RAID / LUKS</span>
-        <span>Docker</span><span>ACME / PKI</span></div>
-    </div>
-    <div>
-      <p><b>Security &amp; detection</b></p>
-      <div class="chips"><span>Sigma</span><span>Splunk</span><span>Sentinel KQL</span><span>SIEM engineering</span>
-        <span>Behavioural analytics</span><span>ATT&amp;CK</span><span>Forensics</span><span>Cryptography</span></div>
-    </div>
-    <div>
-      <p><b>Languages &amp; tooling</b></p>
-      <div class="chips"><span>Python</span><span>Bash</span><span>PowerShell</span><span>Git / GitHub Actions</span>
-        <span>pytest / Hypothesis</span><span>SQLite</span></div>
-    </div>
-    <div>
-      <p><b>Monitoring &amp; ops</b></p>
-      <div class="chips"><span>Beszel</span><span>Uptime Kuma</span><span>Splunk forwarders</span>
-        <span>Ticketing &amp; runbooks</span><span>Vendor procurement</span></div>
-    </div>
-  </div>
+  <dl class="skills">
+    <dt>Infrastructure</dt><dd>Linux (RHEL family, Ubuntu), Windows Server, Proxmox, FreeIPA, Active Directory, Slurm, ZFS / RAID / LUKS, Docker, ACME / PKI</dd>
+    <dt>Security</dt><dd>Sigma, Splunk, Sentinel KQL, SIEM engineering, behavioural analytics, MITRE ATT&amp;CK, forensics, cryptography</dd>
+    <dt>Languages</dt><dd>Python, Bash, PowerShell</dd>
+    <dt>Tooling</dt><dd>Git, GitHub Actions, pytest, Hypothesis, SQLite, Beszel, Uptime Kuma</dd>
+  </dl>
 </section>
 
 <footer>
-  <span>© <span id="y">2026</span> Reza Faraji · Las Vegas, NV</span>
-  <span class="no-print"><a href="https://github.com/farajisec/farajisec.github.io">Source</a></span>
+  <span>© <span id="y">2026</span> Reza Faraji</span>
+  <span class="no-print"><button class="linkbtn" onclick="window.print()">Download as PDF</button> ·
+    <a href="https://github.com/farajisec/farajisec.github.io">Source</a></span>
 </footer>
 
 </div>
